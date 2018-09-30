@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AppTest</string>
+    <string name="google_api_key">AIzaSyD3ctxY3mfZWynxlj5a70NcuvOWUhg6cXI</string>
+    <string name="app_here_id">x9xoUK7aAfqzd0HirYt2</string>
+    <string name="app_here_code">d8H326-iFnpD_iwPhH7qPw</string>
+    <string name="start_address">Start address</string>
+    <string name="end_address">End address</string>
+    <string name="add_new_point">Add point</string>
+    <string name="enter_the_address">Enter the address</string>
+    <string name="go">Go</string>
+    <string name="history">History</string>
+    <string name="toolbar_sub_title">Lets build your route</string>
+    <string name="route">Route</string>
+    <string name="clear">Clear</string>
+    <string name="loading">Please wait!</string>
+</resources>
