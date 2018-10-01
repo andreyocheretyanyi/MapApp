@@ -24,21 +24,21 @@ import com.google.android.gms.maps.model.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-
-
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
+
+    private var step = MainViewModel.AddPointStep.ADD_FROM
+    private lateinit var googleMap: GoogleMap
+    private var carMarker: Marker? = null
+    private var animation: ValueAnimator? = null
 
     private val mainViewModel by lazy {
         ViewModelProviders.of(this).get(MainViewModel::class.java)
     }
-    private var step = MainViewModel.AddPointStep.ADD_FROM
-    private lateinit var googleMap: GoogleMap
+
     private val mapFragment by lazy {
         MapFragment.newInstance()
     }
-    private var carMarker: Marker? = null
-    private var animation: ValueAnimator? = null
 
     private val donePointLiveDataObserver = Observer<DonePointHolder> {
         addPins(it!!)
@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun createAnimation(): ValueAnimator? = mainViewModel.routeLiveData.value?.let { shapes ->
         val vla = ValueAnimator.ofInt(0, shapes.lastIndex)
-        vla.duration = shapes.size *750L
+        vla.duration = shapes.size * 750L
         vla.interpolator = LinearInterpolator()
         vla.addListener(object : Animator.AnimatorListener {
 
@@ -167,11 +167,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             carMarker?.position = mainViewModel.convertShapeToLatLng(shapes[it.animatedValue as Int])
         }
         vla
-    }
-
-
-    private fun startSelectAddressCodeActivity() {
-        startActivityForResult(Intent(this, SelectStreetActivity::class.java), SELECT_ADDRESS_CODE)
     }
 
 
@@ -221,6 +216,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         googleMap.addMarker(MarkerOptions().position(LatLng(lat, lng)).title(address))
     }
 
+    private fun startSelectAddressCodeActivity() {
+        startActivityForResult(Intent(this, SelectStreetActivity::class.java), SELECT_ADDRESS_CODE)
+    }
 
     private fun setUpMapFragment() {
         fragmentManager.beginTransaction().replace(R.id.map, mapFragment).commit()

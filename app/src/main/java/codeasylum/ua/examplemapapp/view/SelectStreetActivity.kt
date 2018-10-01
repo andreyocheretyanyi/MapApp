@@ -21,7 +21,6 @@ import codeasylum.ua.examplemapapp.viewModel.SelectStreetViewModel
 import kotlinx.android.synthetic.main.activity_select_street.*
 
 
-
 class SelectStreetActivity : AppCompatActivity(), OnItemClickListener<DonePoint> {
 
     override fun onItemClick(position: Int, data: DonePoint) {
@@ -43,7 +42,7 @@ class SelectStreetActivity : AppCompatActivity(), OnItemClickListener<DonePoint>
     }
 
     private val errorMessageObserver = Observer<String> {
-        Log.d("tag", it)
+        Log.d(getString(R.string.error_tag), it)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_margin">8dp</dimen>
+    <dimen name="shadow_height">10dp</dimen>
+    <dimen name="main_screen_button_height">60dp</dimen>
+    <dimen name="select_edit_text_text_size">14sp</dimen>
+    <dimen name="toolbar_back_padding">11dp</dimen>
+    <dimen name="toolbar_edit_text_margin_end">25dp</dimen>
+    <dimen name="recycler_padding">10dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="recycler_item_vertical_padding">12dp</dimen>
+    <dimen name="recycler_item_horizontal_padding">8dp</dimen>
+</resources>
